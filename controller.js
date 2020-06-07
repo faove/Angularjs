@@ -1,21 +1,20 @@
-angular.module('MyFirstApp',[])
+var app = angular.module('MyFirstApp',[])
 
-	.controller('FirstController', function($scope){
-		$scope.nombre = "Fran";
-
-		$scope.records = [
-	       {
-	            "Name" : "Alfreds Futterkiste",
-	            "Country" : "Germany"
-	        },{
-	            "Name" : "Berglunds snabbköp",
-	            "Country" : "Sweden"
-	        },{
-	            "Name" : "Centro comercial Moctezuma",
-	            "Country" : "Mexico"
-	        },{
-	            "Name" : "Ernst Handel",
-	            "Country" : "Austria"
-	        }
-	    ];
+	app.controller('FirstController', function($scope){
+		$scope.nombre = "Frank";
+		$scope.nuevoComentario = {};
+		$scope.comentarios = [
+			{
+				comentario:"hey",
+				username:"FAby"
+			},
+			{
+				comentario:"hey2",
+				username:"FAby2"
+			}
+		];
+		$scope.agregarComentario = function(){
+	    	$scope.comentarios.push($scope.nuevoComentario);
+	    	$scope.nuevoComentario={};
+	    }
 	});
